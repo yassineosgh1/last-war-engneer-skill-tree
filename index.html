@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Last War Engineer Skill Planner</title>
+
+<style>
+
+body{
+    background:#1f2430;
+    font-family:Arial;
+    color:white;
+    text-align:center;
+}
+
+.container{
+    width:750px;
+    margin:auto;
+}
+
+.header{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.points{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.reset{
+    margin-bottom:25px;
+    padding:10px 20px;
+    font-size:16px;
+    border:none;
+    border-radius:8px;
+    background:#ff4757;
+    color:white;
+    cursor:pointer;
+}
+
+.reset:hover{
+    background:#ff6b81;
+}
+
+.row{
+    display:flex;
+    align-items:center;
+    margin:25px 0;
+}
+
+.level{
+    width:60px;
+    font-size:48px;
+    color:#aaa;
+}
+
+.skills{
+    display:flex;
+    gap:15px;
+}
+
+.skill{
+    width:180px;
+    height:180px;
+    background:#ff9f43;
+    border-radius:12px;
+    border:3px solid #444;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+}
+
+.skill.green{
+    background:#2ecc71;
+}
+
+.icon{
+    width:90px;
+    height:90px;
+}
+
+.counter{
+    font-size:48px;
+    font-weight:bold;
+    margin-top:6px;
+    color:#555;   /* grey when 0 */
+}
+
+.skill:hover{
+    transform:scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">Engineer Profession Planner</div>
+
+<div class="points">
+Available Points: <span id="points">42</span>
+</div>
+
+<button onclick="resetTree()" class="reset">Reset Build</button>
+
+
+<!-- LEVEL 1 -->
+<div class="row">
+<div class="level">1</div>
+
+<div class="skills">
+
+<div class="skill" onclick="addPoint(this,5)">
+<img src="skill1.png" class="icon">
+<div class="counter">0/5</div>
+</div>
+
+<div class="skill" onclick="addPoint(this,1)">
+<img src="skill2.png" class="icon">
+<div class="counter">0/1</div>
+</div>
+
+<div class="skill green" onclick="addPoint(this,1)">
+<img src="exp1.png" class="icon">
+<div class="counter">0/1</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- LEVEL 5 -->
+<div class="row">
+<div class="level">5</div>
+
+<div class="skills">
+
+<div class="skill" onclick="addPoint(this,1)">
+<img src="skill3.png" class="icon">
+<div class="counter">0/1</div>
+</div>
+
+<div class="skill" onclick="addPoint(this,5)">
+<img src="skill4.png" class="icon">
+<div class="counter">0/5</div>
+</div>
+
+<div class="skill green" onclick="addPoint(this,1)">
+<img src="exp2.png" class="icon">
+<div class="counter">0/1</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- LEVEL 10 -->
+<div class="row">
+<div class="level">10</div>
+
+<div class="skills">
+
+<div class="skill" onclick="addPoint(this,5)">
+<img src="skill5.png" class="icon">
+<div class="counter">0/5</div>
+</div>
+
+<div class="skill" onclick="addPoint(this,5)">
+<img src="skill6.png" class="icon">
+<div class="counter">0/5</div>
+</div>
+
+<div class="skill green" onclick="addPoint(this,1)">
+<img src="exp3.png" class="icon">
+<div class="counter">0/1</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- LEVEL 15 -->
+<div class="row">
+<div class="level">15</div>
+
+<div class="skills">
+
+<div class="skill" onclick="addPoint(this,5)">
+<img src="skill7.png" class="icon">
+<div class="counter">0/5</div>
+</div>
+
+<div class="skill" onclick="addPoint(this,5)">
+<img src="skill8.png" class="icon">
+<div class="counter">0/5</div>
+</div>
+
+<div class="skill green" onclick="addPoint(this,1)">
+<img src="exp4.png" class="icon">
+<div class="counter">0/1</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- LEVEL 20 -->
+<div class="row">
+<div class="level">20</div>
+
+<div class="skills">
+
+<div class="skill" onclick="addPoint(this,5)">
+<img src="skill9.png" class="icon">
+<div class="counter">0/5</div>
+</div>
+
+<div class="skill" onclick="addPoint(this,1)">
+<img src="skill10.png" class="icon">
+<div class="counter">0/1</div>
+</div>
+
+<div class="skill green" onclick="addPoint(this,1)">
+<img src="exp5.png" class="icon">
+<div class="counter">0/1</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- LEVEL 25 -->
+<div class="row">
+<div class="level">25</div>
+
+<div class="skills">
+
+<div class="skill" onclick="addPoint(this,3)">
+<img src="skill11.png" class="icon">
+<div class="counter">0/3</div>
+</div>
+
+<div class="skill" onclick="addPoint(this,5)">
+<img src="skill12.png" class="icon">
+<div class="counter">0/5</div>
+</div>
+
+<div class="skill green" onclick="addPoint(this,1)">
+<img src="exp6.png" class="icon">
+<div class="counter">0/1</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- LEVEL 30 -->
+<div class="row">
+<div class="level">30</div>
+
+<div class="skills">
+
+<div class="skill" onclick="addPoint(this,2)">
+<img src="skill13.png" class="icon">
+<div class="counter">0/2</div>
+</div>
+
+<div class="skill" onclick="addPoint(this,2)">
+<img src="skill14.png" class="icon">
+<div class="counter">0/2</div>
+</div>
+
+<div class="skill green" onclick="addPoint(this,1)">
+<img src="exp7.png" class="icon">
+<div class="counter">0/1</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- LEVEL 35 -->
+<div class="row">
+<div class="level">35</div>
+
+<div class="skills">
+
+<div class="skill" onclick="addPoint(this,5)">
+<img src="skill15.png" class="icon">
+<div class="counter">0/5</div>
+</div>
+
+<div class="skill" onclick="addPoint(this,5)">
+<img src="skill16.png" class="icon">
+<div class="counter">0/5</div>
+</div>
+
+<div class="skill green" onclick="addPoint(this,1)">
+<img src="exp8.png" class="icon">
+<div class="counter">0/1</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- LEVEL 40 -->
+<div class="row">
+<div class="level">40</div>
+
+<div class="skills">
+
+<div class="skill" onclick="addPoint(this,5)">
+<img src="skill17.png" class="icon">
+<div class="counter">0/5</div>
+</div>
+
+<div class="skill" onclick="addPoint(this,3)">
+<img src="skill18.png" class="icon">
+<div class="counter">0/3</div>
+</div>
+
+<div class="skill green" onclick="addPoint(this,1)">
+<img src="exp9.png" class="icon">
+<div class="counter">0/1</div>
+</div>
+
+</div>
+</div>
+
+
+
+</div>
+
+
+<script>
+let points = 42;
+
+function addPoint(skill,max){
+
+let counter = skill.querySelector(".counter")
+let current = parseInt(counter.innerText.split("/")[0])
+
+if(current < max && points > 0){
+
+current++
+points--
+
+counter.innerText = current + "/" + max
+
+/* change color when upgraded */
+if(current > 0){
+counter.style.color = "#ffffff"
+}
+
+document.getElementById("points").innerText = points
+
+}
+
+}
+
+function resetTree(){
+
+points = 42
+document.getElementById("points").innerText = points
+
+let counters = document.querySelectorAll(".counter")
+
+counters.forEach(counter=>{
+    let max = counter.innerText.split("/")[1]
+    counter.innerText = "0/" + max
+    counter.style.color = "#555"
+})
+
+}
+
+</script>
+
+</body>
+</html>
